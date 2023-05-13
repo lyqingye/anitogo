@@ -1,4 +1,4 @@
-module anitogo
+module github.com/nssteinbrenner/anitogo
 
 go 1.20
 
