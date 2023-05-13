@@ -321,6 +321,9 @@ func (p *parser) matchEpisodePattern(w string, tkn *token) bool {
 		if p.matchJapaneseCounterPattern(w, tkn) {
 			return true
 		}
+		if p.matchChineseCounterPattern(w, tkn) {
+			return true
+		}
 	}
 
 	return false
@@ -484,6 +487,21 @@ func (p *parser) matchJapaneseCounterPattern(w string, tkn *token) bool {
 	}
 
 	pattern := "(\\d{1,3})話$"
+	re := regexp.MustCompile(pattern)
+	match := re.FindStringSubmatch(w)
+	if match == nil {
+		return false
+	}
+	p.setEpisodeNumber(match[1], tkn, false)
+	return true
+}
+
+func (p *parser) matchChineseCounterPattern(w string, tkn *token) bool {
+	if strings.IndexRune(w, '\u8bdd') == -1 {
+		return false
+	}
+
+	pattern := "(\\d{1,3})话"
 	re := regexp.MustCompile(pattern)
 	match := re.FindStringSubmatch(w)
 	if match == nil {

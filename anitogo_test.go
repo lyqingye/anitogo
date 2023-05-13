@@ -233,3 +233,11 @@ func equal(a, b []string) bool {
 	}
 	return true
 }
+
+func TestMyTestCase(t *testing.T) {
+	// retElems := Parse("[LoliHouse] 肌肉魔法使-MASHLE- / Mashle - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]", DefaultOptions)
+	// t.Log(retElems)
+
+	retElems := Parse("[DAY字幕组][女神的露天咖啡厅/Megami no Café Terrace][第6话「两个月!」][简日双语][WEBrip][1080P][MP4]", DefaultOptions)
+	t.Log(retElems)
+}
