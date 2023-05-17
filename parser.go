@@ -298,6 +298,13 @@ func (p *parser) validateElements() {
 			p.tokenizer.elements.erase(elementCategoryEpisodeTitle)
 			p.tokenizer.elements.insert(elementCategoryEpisodeNumber, match[1])
 		}
+		re2 := regexp.MustCompile("^-\\s(\\d{1,2})$")
+		match2 := re2.FindStringSubmatch(episodeTitle)
+
+		if match2 != nil {
+			p.tokenizer.elements.erase(elementCategoryEpisodeTitle)
+			p.tokenizer.elements.insert(elementCategoryEpisodeNumber, match2[1])
+		}
 	}
 	if p.tokenizer.elements.contains(elementCategoryAnimeType) && p.tokenizer.elements.contains(elementCategoryEpisodeTitle) {
 		episodeTitle := p.tokenizer.elements.get(elementCategoryEpisodeTitle)[0]

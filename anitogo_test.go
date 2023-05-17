@@ -238,6 +238,6 @@ func TestMyTestCase(t *testing.T) {
 	// retElems := Parse("[LoliHouse] 肌肉魔法使-MASHLE- / Mashle - 06 [WebRip 1080p HEVC-10bit AAC][简繁内封字幕]", DefaultOptions)
 	// t.Log(retElems)
 
-	retElems := Parse("[轻之国度][High School DxD BorN][第08话][BIG5][720p][MP4]", DefaultOptions)
+	retElems := Parse("[轻之国度][High School DxD BorN][1-12][BIG5][720p][MP4]", DefaultOptions)
 	t.Log(retElems)
 }
