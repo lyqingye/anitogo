@@ -96,7 +96,7 @@ func newKeywordManager() *keywordManager {
 		"AAC", "AIFF", "FLAC", "M4A", "MP3", "MKA", "OGG", "WAV", "WMA",
 		"7Z", "RAR", "ZIP", "ASS", "SRT"})
 	kwm.add(elementCategoryLanguage, keywordOptionsDefault, []string{
-		"ENG", "ENGLISH", "ESPANOL", "JAP", "PT-BR", "SPANISH", "VOSTFR", "BIG5", "GB", "BIG5_GB",
+		"ENG", "ENGLISH", "ESPANOL", "JAP", "PT-BR", "SPANISH", "VOSTFR", "简", "繁",
 		"CHT", "CHS", "简繁", "简体", "繁体", "简中", "繁中", "简日双语", "简繁内封字幕", "简中内嵌", "简繁日内封字幕"})
 	kwm.add(elementCategoryLanguage, keywordOptionsUnidentifiable, []string{
 		"ESP", "ITA"}) // e.g "Tokyo ESP", "Bokura ga Ita"
